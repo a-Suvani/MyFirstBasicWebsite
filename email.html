@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Cute Animated Form</title>
+
+  <style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+
+
+
+
+    body {
+
+      background-color: #80a5dd;
+
+      font-family: 'Roboto', sans-serif;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      height: 100vh;
+
+      margin: 0;
+
+    }
+
+
+
+
+    .form-container {
+
+      height: 400px;
+
+      background-color: #FFFFFF;
+
+      border-radius: 8px;
+
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+      padding: 30px;
+
+      max-width: 400px;
+
+      width: 100%;
+
+      box-sizing: border-box;
+
+    }
+
+
+
+
+    .form-title {
+
+      text-align: center;
+
+      font-size: 24px;
+
+      margin-bottom: 20px;
+
+      color: #333333;
+
+    }
+
+
+
+
+    .form-input {
+
+      width: 100%;
+
+      padding: 12px;
+
+      border: none;
+
+      background-color: #F2F3F7;
+
+      border-radius: 8px;
+
+      margin-bottom: 15px;
+
+      font-size: 16px;
+
+      color: #333333;
+
+      outline: none;
+
+      transition: background-color 0.3s ease;
+
+    }
+
+
+
+
+    .form-input::placeholder {
+
+      color: #9C9C9C;
+
+    }
+
+
+
+
+    .form-input:focus {
+
+      background-color: #E5E7EB;
+
+    }
+
+
+
+
+    .form-button {
+
+      width: 100%;
+
+      padding: 12px;
+
+      border: none;
+
+      background-color: #0062e3;
+
+      border-radius: 8px;
+
+      font-size: 18px;
+
+      color: #FFFFFF;
+
+      cursor: pointer;
+
+      outline: none;
+
+      transition: background-color 0.3s ease;
+
+
+
+
+    }
+
+
+
+
+    .form-button:hover {
+
+      background-color: #0053a6;
+
+    }
+
+  </style>
+
+</head>
+
+
+
+
+<body>
+
+  <div class="form-container">
+
+    <h2 class="form-title">Sign up for Anime </h2>
+
+    <form action="process_form.php" method="POST">
+
+      <input type="email" class="form-input" name="email" placeholder="Your Email" required>
+
+      <button type="submit" class="form-button">Sign up</button>
+
+    </form>
+
+  </div>
+
+
+
+
+</body>
+
+
+
+
+</html>
