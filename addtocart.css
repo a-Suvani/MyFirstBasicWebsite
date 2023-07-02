@@ -1,0 +1,238 @@
+*
+{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+    font-size:18px;
+}
+.logo img{
+    width: 20%;
+    background: transparent;
+}
+.header t {
+    color: white;
+    animation: three-d-text 2s infinite;
+  }
+  
+  @keyframes three-d-text {
+    0% {
+      text-shadow: -4px 4px 0 #4aa2e6, -8px 8px 0 #318dbf, -12px 12px 0 #1d84c9;
+    }
+    50% {
+      text-shadow: 4px -4px 0 #68c9ec, 8px -8px 0 #57aece, 12px -12px 0 #058da5;
+    }
+    100% {
+      text-shadow: -4px 4px 0 #56c3d4, -8px 8px 0 #3595bb, -12px 12px 0 #1072a3;
+    }
+  }
+  
+
+
+
+  .header {
+    background-color: black;
+    color: white;
+    padding: 20px;
+  }
+  
+  .header t {
+    color: white;
+    font-family: cursive;
+    font-size: 40px;
+  }
+  
+  .header .logo img {
+    width: 100px;
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  .header .cart {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 20px;
+  }
+  
+  .header #count {
+    background-color: rgb(255, 177, 245);
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px;
+    display: inline-block;
+    margin-left: 5px;
+  }
+  
+  .fa-cart-shopping {
+    color: rgb(8, 97, 127);
+  }
+  
+body{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgb(120, 134, 208);;
+}
+.header{
+    height:80px;
+    width: 70%;
+    background-color: rgb(102, 115, 237);
+    border-radius: 3px;
+    margin: 30px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+}
+.header.logo{
+    font-size: 30px;
+    font-weight: bold;
+    color:white;
+}
+.cart{
+    display: flex;
+    background-color: white;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 10px;
+    border-radius: 3px;
+    width: 80px;
+}
+.fa-solid{
+    color: rgb(88, 170, 238);
+
+}
+.cart p {
+    height: 22px;
+    width: 22px;
+    display: flex;
+    align-items: right;
+    justify-content: center;
+    border-radius: 22px;
+    background-color: rgb(30, 138, 246);
+    color: white;
+}
+.container{
+    display: flex;
+    width: 70%;
+    margin-bottom: 30px;
+}
+#root{
+    width: 60%;
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+}
+.siderbar{
+    padding-right: 50px;
+    float: right;
+    width: 40%;
+    border-radius: 5px;
+    background-color: #d29d9d;
+    margin-left: 50px;
+    padding: 15px;
+    text-align:center;
+}
+.head{
+    background-color: rgb(43, 170, 244);
+    border-radius: 3px;
+    height: 40px;
+    padding: 10px;
+    margin-bottom: 20px;
+    color:rgb(241, 219, 219);
+    display:flex;
+    align-items: center;
+    
+}
+.foot{
+    display:flex;
+    justify-content: space-between;
+    margin: 20px 0px;
+    padding: 10px 0px;
+    border-top:1px solid #333;
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid rgb(96, 96, 184);
+    border-radius: 5px;
+    padding: 15px;
+}
+.img-box
+{
+    width: 100%;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+}
+.images{
+    max-width: 90%;
+    max-height: 90%;object-fit: cover;
+    object-position: center;
+}
+.bottom{
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height:110px;
+}
+
+h2{
+    font-size: 20px;
+    color: blue;
+}
+button{
+    width: 100%;
+    position: relative;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(128, 128, 255);
+    padding: 7px 25px;
+    cursor:pointer;
+    color: white;
+}
+button:hover{
+    background-color: #333;
+}
+.cart-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: white;
+    border-bottom: 2px solid #aaa;
+    border-radius: 3px;
+    margin: 10px 10px
+}
+.row-img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    border: 1px solid rgb(107, 107, 165);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.rowimg{
+    max-width: 43px;
+    max-height: 43px;
+    border-radius: 50%;
+}
+.fa-trash:hover{
+    cursor:pointer;
+    color:grey;
+}
