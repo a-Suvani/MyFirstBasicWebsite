@@ -6,6 +6,13 @@
     font-family: 'poppins', sans-serif;
     font-size:18px;
 }
+.image img {
+    width: 20%;
+    align-content: center;
+    /* margin-left: 170%;
+    margin-top: 60%; */
+    margin-left: 30px;
+}
 .logo img{
     width: 20%;
     background: transparent;
@@ -39,7 +46,7 @@
   .header t {
     color: white;
     font-family: cursive;
-    font-size: 40px;
+    font-size: 32px;
   }
   
   .header .logo img {
@@ -76,12 +83,12 @@ body{
     align-items:center;
     justify-content: center;
     flex-direction: column;
-    background-color: rgb(120, 134, 208);;
+    background-color: rgb(245, 120, 162);;
 }
 .header{
     height:80px;
     width: 70%;
-    background-color: rgb(102, 115, 237);
+    background-color: rgb(0, 14, 141);
     border-radius: 3px;
     margin: 30px 0px;
     display: flex;
@@ -90,13 +97,13 @@ body{
     padding: 15px;
 }
 .header.logo{
-    font-size: 30px;
+    font-size: 25px;
     font-weight: bold;
     color:white;
 }
 .cart{
     display: flex;
-    background-color: white;
+    background-color: rgb(251, 243, 243);
     justify-content: space-between;
     align-items: center;
     padding: 7px 10px;
@@ -121,6 +128,7 @@ body{
     display: flex;
     width: 70%;
     margin-bottom: 30px;
+    /* position: fixed; */
 }
 #root{
     width: 60%;
@@ -133,18 +141,19 @@ body{
     float: right;
     width: 40%;
     border-radius: 5px;
-    background-color: #d29d9d;
+    background-color: #e00c61;
     margin-left: 50px;
     padding: 15px;
     text-align:center;
 }
 .head{
-    background-color: rgb(43, 170, 244);
+    background-color: rgb(0, 63, 100);
+    font-size: 50px;
     border-radius: 3px;
     height: 40px;
     padding: 10px;
     margin-bottom: 20px;
-    color:rgb(241, 219, 219);
+    color:rgb(248, 248, 248);
     display:flex;
     align-items: center;
     
@@ -162,7 +171,7 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    border: 1px solid rgb(96, 96, 184);
+    border: 3px solid rgb(0, 0, 0);
     border-radius: 5px;
     padding: 15px;
 }
@@ -198,13 +207,13 @@ button{
     position: relative;
     border: none;
     border-radius: 5px;
-    background-color: rgb(128, 128, 255);
+    background-color: rgb(0, 17, 84);
     padding: 7px 25px;
     cursor:pointer;
     color: white;
 }
 button:hover{
-    background-color: #333;
+    background-color: #080000;
 }
 .cart-item{
     display: flex;

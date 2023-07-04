@@ -1,8 +1,8 @@
 <?php
 // Database connection
-$host = 'your_host';
+$host = 'localhost';
 $db   = 'animewebsite';
-$user = 'your_username';
+$user = 'root';
 $pass = 'your_password';
 $charset = 'utf8mb4';
 

@@ -2,30 +2,30 @@ const product = [
 
     {
         id: 0,
-        image: ' https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMoD18wPUw7NAejCOsYsNYHriPJODf4HRwIw&usqp=CAU',
-        title: 'kikis delivery service',
+        image: 'spirited-away.jpg',
+        title: 'Spirited-Away',
         price: 12,
     },
 
     {
         id: 1,
-        image: ' https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaWb5oPru6XegGlqsAsJxojnGopZAM87qunEh6s7ht8VjMXkhAk161f-dfayYezRGOmG8&usqp=CAU',
-        title: 'arietye',
+        image: 'monoki.jpg ',
+        title: 'monoki',
         price: 10,
 
     },
 
     {
         id: 3,
-        image: 'https://occ-0-1168-299.1.nflxso.net/dnm/api/v6/evlCitJPPCVCry0BZlEFb5-QjKc/AAAABf7z3182sV5npT6XvjMdZy9oSYzUoeKMzPII1h6mxfseRaYVy6vhG5HeXBFuBcfa2D0CxaElXKKUV6GcTcB7OjLzxA.jpg?r=797',
-        title: 'the wind rises',
+        image: ' grave-of-fireflies.jpg',
+        title: 'Grave-of-Fireflies',
         price: 16,
 
     },
     
     {
         id: 4,
-        image: 'https://m.media-amazon.com/images/M/MV5BZTI3NmJmYTQtNDg4NS00M2VlLTgzZDAtZWIwZDcyOWY5YzIzXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg',
+        image: 'howls-front.jpg',
         title: 'nausicca',
         price: 20,
 
