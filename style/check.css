@@ -1,0 +1,126 @@
+body {
+    background-color: #ccb7b7;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+  }
+  .Logo img {
+    width: 4%;
+  }
+  h1 {
+    text-align: center;
+    color: #000000;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .movie {
+    text-align: center;
+    margin: 20px;
+    background-color: #e880a9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .movie .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.6;
+    z-index: -1;
+    animation: backgroundAnimation 10s infinite linear;
+  }
+  
+  @keyframes backgroundAnimation {
+    0% { background-position: 0 0; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0 0; }
+  }
+  
+  .movie img {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .rating {
+    position: relative;
+    margin-top: 20px;
+  }
+  
+  .bar {
+    position: relative;
+    width: 150px;
+    height: 10px;
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #1b0074;
+    border-radius: 5px;
+    animation: fillAnimation 2s ease-in-out;
+  }
+  
+  .stars {
+    position: absolute;
+    top: -10px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: starsAnimation 2s ease-in-out;
+  }
+  
+  .stars::before {
+    content: "★ ★ ★ ★ ★";
+    color: #00216d;
+    font-size: 24px;
+  }
+  
+  .percentage {
+    margin-top: 10px;
+  }
+  
+  .percentage span {
+    display: block;
+    font-weight: bold;
+    font-size: 18px;
+    color: #2006a3;
+    animation: fadeIn 2s ease-in-out;
+  }
+  
+  @keyframes fillAnimation {
+    0% {
+      width: 0%;
+    }
+  }
+  
+  @keyframes starsAnimation {
+    0% {
+      transform: translateY(-30px);
+      opacity: 0;
+    }
+  }
+  
+  
+  
+  

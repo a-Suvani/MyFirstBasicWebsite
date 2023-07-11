@@ -1,35 +1,60 @@
 <?php
-// Database connection
-$host = 'localhost';
-$db   = 'animewebsite';
-$user = 'root';
-$pass = 'your_password';
-$charset = 'utf8mb4';
 
-$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
-$options = [
-  PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-  PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-  PDO::ATTR_EMULATE_PREPARES => false,
-];
-
-try {
-  $pdo = new PDO($dsn, $user, $pass, $options);
-} catch (\PDOException $e) {
-  throw new \PDOException($e->getMessage(), (int)$e->getCode());
+if (empty($_POST["name"])) {
+    die("Name is required");
 }
 
-// Signup process
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  $username = $_POST['username'];
-  $password = $_POST['password'];
-
-  // Insert user data into the database
-  $stmt = $pdo->prepare('INSERT INTO users (username, password) VALUES (?, ?)');
-  $stmt->execute([$username, $password]);
-
-  // Redirect to a success page or perform additional actions
-  header('Location: success.html');
-  exit();
+if ( ! filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
+    die("Valid email is required");
 }
-?>
+
+if (strlen($_POST["password"]) < 8) {
+    die("Password must be at least 8 characters");
+}
+
+if ( ! preg_match("/[a-z]/i", $_POST["password"])) {
+    die("Password must contain at least one letter");
+}
+
+if ( ! preg_match("/[0-9]/", $_POST["password"])) {
+    die("Password must contain at least one number");
+}
+
+if ($_POST["password"] !== $_POST["password_confirmation"]) {
+    die("Passwords must match");
+}
+print_r($_POST);
+$password_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
+
+// print_r($_POST);
+// var_dump($password_hash);
+
+$mysqli = require __DIR__ . "/database.php";
+
+$sql = "INSERT INTO user (name, email, password)
+        VALUES (?, ?, ?)";
+        
+$stmt = $mysqli->stmt_init();
+
+if ( ! $stmt->prepare($sql)) {
+    die("SQL error: " . $mysqli->error);
+}
+
+$stmt->bind_param("sss",
+                  $_POST["name"],
+                  $_POST["email"],
+                  $password_hash);
+                  
+if ($stmt->execute()) {
+
+    header("Location: login.php");
+    exit;
+    
+} else {
+    
+    if ($mysqli->errno === 1062) {
+        die("email already taken");
+    } else {
+        die($mysqli->error . " " . $mysqli->errno);
+    }
+}
