@@ -34,7 +34,7 @@
         </div>
     </div>
    
-    <script src="addtocart.js"></script>
+    <script src="script/addtocart.js"></script>
     
 </body>
 </html>

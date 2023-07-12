@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 
 session_start();
 
@@ -10,11 +10,10 @@ if (isset($_SESSION["user_id"])) {
             WHERE id = {$_SESSION["user_id"]}";
             
     $result = $mysqli->query($sql);
-    
     $user = $result->fetch_assoc();
 }
 
-?>
+?> -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">

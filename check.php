@@ -102,7 +102,7 @@
     </div>
   </div>
 
-  <script src="check.js"></script>
+  <script src="script/check.js"></script>
 </body>
 </html>
 
