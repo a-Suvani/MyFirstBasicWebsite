@@ -29,7 +29,7 @@ $password_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
 // print_r($_POST);
 // var_dump($password_hash);
 
-$mysqli = require __DIR__ . "/database.php";
+$mysqli = require __DIR__ . "./database.php";
 
 $sql = "INSERT INTO shop_db.users (name, email, password)
         VALUES (?, ?, ?)";
