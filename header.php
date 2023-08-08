@@ -18,7 +18,7 @@ if ($conn->connect_error) {
 
 <a href="#" class="logo"> anime </a>
 <nav class="navbar">
-    <a href="admin.php"> add products </a>
+    <!-- <a href="admin.php"> add products </a> -->
     <a href="products.php"> View products </a>
 </nav>
 <?php 

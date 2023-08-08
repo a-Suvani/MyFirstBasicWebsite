@@ -8,8 +8,9 @@
 
   <h1>Ghibli Tomatometer</h1>
   <div class="Logo">
-    <img src="assets/image/pocorn.png"></img>
+    <img src="https://i.pinimg.com/originals/a5/fe/c4/a5fec4284531e94c3103e325dd3696f6.gif"></img>
   </div>
+  <section>
   <div class="container">
     <div class="movie" id="spiritedAway">
       <div class="background"></div>
@@ -41,6 +42,7 @@
       </div>
     </div>
 
+
     <div class="movie" id="princessMononoke">
       <div class="background"></div>
       <img src="assets/image/imbdPrincesss.jpg" alt="Princess Mononoke">
@@ -71,6 +73,8 @@
       </div>
     </div>
 
+    
+<br>
     <div class="movie" id="kikisDeliveryService">
       <div class="background"></div>
       <img src="assets/image/imbdkiki.jpg" alt="Kiki's Delivery Service">
@@ -85,7 +89,6 @@
         </div>
       </div>
     </div>
-
     <div class="movie" id="castleInTheSky">
       <div class="background"></div>
       <img src="assets/image/imbdcastle.jpg" alt="Castle in the Sky">
@@ -101,6 +104,7 @@
       </div>
     </div>
   </div>
+    </section>
 
   <script src="script/check.js"></script>
 </body>

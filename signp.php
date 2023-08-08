@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $mysqli = require __DIR__ . "/database.php";
 
-    $sql = "INSERT INTO shop_db.users (name, email, password)
+    $sql = "INSERT INTO shop_db.user (name, email, password_hash)
             VALUES (?, ?, ?)";
 
     $stmt = $mysqli->stmt_init();
@@ -70,7 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             margin-top: -700px;
             margin-right: 80px;
             animation: bounce 5s infinite;
-            font-size: 60px;
+            font-size: 40px;
             font-weight: bolder;
             color: rgb(4, 45, 107);
         }
@@ -106,11 +106,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             justify-content: center;
             height: 100vh;
             margin: 0;
+            background-image: url("https://cutewallpaper.org/25/anime-fish-phone-wallpaper-gif/pin-on-aesthetic.gif");
+            background-repeat: none;
+            background-size: cover;
         }
+
 
         .form-container {
             height: 480px;
-            background-color: #FFFFFF;
+            background-color: transparent;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             padding: 30px;
@@ -181,7 +185,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <p>Signup Page</p>
     </div>
     <div class="image">
-        <img src="signuppage.gif" alt="gif">
+        <!-- <img src="https://64.media.tumblr.com/tumblr_l6hetfQ6zD1qad04no1_500.gif" alt="gif"> -->
     </div>
     <div class="form-container">
         <h2 class="form-title">Sign up for more Updates</h2>

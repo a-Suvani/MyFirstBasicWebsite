@@ -1,7 +1,7 @@
 <?php
 
 $host = "localhost";
-$dbname = "animewebsite";
+$dbname = "shop_db";
 $username = "root";
 $password = "";
 

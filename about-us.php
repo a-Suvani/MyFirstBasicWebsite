@@ -70,86 +70,47 @@
 
     }
 
+    body {
+    top: 30px;
+      margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent scrollbar from appearing */
+}
 
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent scrollbar from appearing */
+}
 
+.witch-container {
+    position: absolute;
+    top: 50%; /* Align the container vertically */
+    left: -100px; /* Start the animation outside the left edge */
+    animation: fly-across 17s linear infinite; /* Apply the animation */
+}
+.p {
+    font-size: 20px;
+    color: #000000;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    transition: color white 0.3s ease, font-size 0.3s ease;
+}
 
-    .animation {
+p:hover {
+    color: white; /* Change color to a cool shade of orange */
+    font-size: 24px; /* Increase font size on hover */
+}
 
-      animation: fadeIn 1.5s ease-in-out;
+@keyframes fly-across {
 
+  from {
+    left: 100%;
+  }
+    to {
+        right:  100%;/* Move the container to the right edge */
     }
-
-
-
-
-    .totoro {
-
-      position: relative;
-
-      width: 350px;
-
-      height: 350px;
-      bottom: 120px;
-
-        background-image:url('toto.gif');
-
-      background-repeat: no-repeat;
-
-      background-size: cover;
-
-      animation: walk 10s linear infinite;
-
-      transform: scaleX(-1);
-
-    }
-
-
-
-
-    @keyframes fadeIn {
-
-      0% {
-
-        opacity: 0;
-
-        transform: translateY(20px);
-
-      }
-
-
-
-
-      100% {
-
-        opacity: 1;
-
-        transform: translateY(0);
-
-      }
-
-    }
-
-
-
-
-    @keyframes walk {
-
-      0% {
-
-        right: -350px;
-
-      }
-
-
-
-
-      100% {
-
-        right: calc(100% + 350px);
-
-      }
-
-    }
+}
 
   </style>
 
@@ -159,6 +120,12 @@
 
 
 <body>
+
+<body>
+    <div class="witch-container">
+        <img src="assets/image/cart/witch.gif" alt="Flying Witch">
+    </div>
+</body>
 
   <div class="container animation">
 

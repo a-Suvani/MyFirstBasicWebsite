@@ -1,4 +1,4 @@
-<!-- <?php
+ <?php
 
 session_start();
 
@@ -13,7 +13,7 @@ if (isset($_SESSION["user_id"])) {
     $user = $result->fetch_assoc();
 }
 
-?> -->
+?> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -26,7 +26,7 @@ if (isset($_SESSION["user_id"])) {
      <div class="navbar">
 
         <ul>
-            <li><a href="anime.php">Home</a></li>
+            <li><a href="index.php">Home</a></li>
             <li><a href="about-us.php">Aboutus</a></li>
             <li><a href="check.php">Ratings</a></li>
             <li><a href="products.php">Shop</a></li>
@@ -38,7 +38,7 @@ if (isset($_SESSION["user_id"])) {
         
     <?php else: ?>
         
-        <li><a href="signup.html">Signup</a></li>  
+        <li><a href="signp.php">Signup</a></li>  
             <li><a href="login.php">Login</a></li>          
     <?php endif; ?>
        
@@ -90,15 +90,3 @@ if (isset($_SESSION["user_id"])) {
           
 </body>
 </html>
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    

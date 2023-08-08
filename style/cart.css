@@ -6,7 +6,7 @@ body {
 
 :root {
     --blue: #2980b9;
-    --red: #fffdfe;
+    --red: #e588b7;
     --orange: #e47718;
     --black: #000000;
     --white: #ffffff;
@@ -332,3 +332,277 @@ section {
     font-size: 1.5rem;
     padding: 0.5rem 1rem; }
   
+    .shopping-cart table {
+        text-align: center;
+        width: 100%;
+    }
+    
+    .shopping-cart table thead th {
+        padding: 1.5rem;
+        font-size: 1.6rem;
+        color:var(--white);
+        background-color: black;
+    }
+    
+    .shopping-cart table tr td {
+        border-bottom: 1.8px solid black;
+        padding: 1.5rem;
+        font-size: 1.6rem;
+        color: black;
+    }
+    
+    .shopping-cart table input[type="number"] {
+        border: 1.8px solid black;
+        padding: 1rem 2rem;
+        font-size: 1.6rem;
+        color: var(--blue);
+        width: 10rem;
+    }
+    
+    .shopping-cart table input[type="submit"] {
+        border: 1.8px solid black;
+        padding: 1rem 2rem;
+        font-size: 1.6rem;
+        background-color: var(--orange);
+        color: var(--white);
+    }
+    .shopping-cart table input[type="submit"]:hover {
+        background-color: rgb(86, 86, 250);
+    }
+    .shopping-cart table .table-bottom{
+        background-color: rgb(255, 183, 138);
+    }
+    .shopping-cart .checkout-btn{
+        text-align: center;
+        /* background-color: #e588b7; */
+        margin-top: 1rem;
+        background-color: #e588b7;
+        border:2px solid black;
+        width: 30%;
+    }
+
+    .shopping-cart .checkout-btn a{
+      display: inline-block;
+      width: auto;
+    }
+    .shopping-cart .checkout-btn a.disabled{
+        pointer-events: none;
+        opacity: .5;
+        user-select: none;
+        background-color: #e493bc;
+      }
+      .checkout-form form{
+        padding: 2rem;
+        border-radius: .8rem;
+        background-color: #ffd2e3;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 10px;
+      }
+      .checkout-form form .flex{
+       display: flex;
+       flex-wrap: wrap;
+       gap: 1.5rem;
+      }
+      .checkout-form form .flex .inputBox{
+        flex:1 1 40rem ;
+        color: black;
+      }
+
+      .checkout-form form .flex .inputBox span{
+        font-size: 2rem;
+        color: black;
+      }
+      .checkout-form form .flex .inputBox input,
+      .checkout-form form .flex .inputBox select{
+        width: 100%;
+        background-color: white;
+        font-size: 1.4rem;
+        border-radius: .5rem;
+        margin: 1rem 0;
+        padding: 1.2rem 1.4rem;
+        text-transform: none;
+        border:var(--border);
+      }
+
+     
+      .display-order {
+        max-width: 50rem;
+        background-color: white;
+        border-radius: .5rem;
+        text-align: center;
+        padding: 1.5rem;
+        margin: 0 auto;
+        margin-bottom: 1rem;
+        box-sizing: var(--box-shadow);
+        border: 1.7px solid black;
+    }
+    
+    .display-order span {
+        display: inline-block;
+        border-radius: .5rem;
+        background-color: var(--bg-color);
+        padding: 1rem 1.5rem; /* Adjust the padding values for the desired size */
+        font-size: 2rem;
+        color: black;
+        margin: .5rem;
+    }
+    
+    .display-order span.grand-total {
+        width: 300px;
+        height: 50px; /* Set the height as per your requirement */
+        background-color: #056e97;
+    }
+/*     
+    .order-message-container{
+        position:fixed;
+        top:0 ;left:0;
+        min-height: 100vh;
+        overflow-y:scroll;
+        overflow-x: hidden;
+        padding:2rem;
+        align-items: center;
+
+        justify-content: center;
+        z-index: 1100;
+        background-color: grey;
+        width: 100%;
+    }
+    .order-message-container::-webkit-scrollbar{
+        width: 1rem;
+    }
+    .order-message-container::-webkit-scrollbar-track{
+        background-color: grey;
+    }
+    .order-message-container::-webkit-scrollbar-thumb{
+        background-color: rgb(115, 207, 238);
+    }
+    .order-message-container .message-container{
+        width:50rem;
+        background-color: white;
+        border-radius: .5rem;
+        padding:.2rem;
+        text-align: center;
+    }
+    .order-message-container .message-container{
+        width:50rem;
+        background-color: rgb(255, 187, 216);
+        border-radius: .5rem;
+        padding:.2rem;
+        text-align: center;
+        align-items: center;
+        align-content: center;
+    }
+    .order-message-container .message-container h3{
+        font-size: 2.2rem;
+        color:rgb(0, 0, 0);
+    }
+    .order-message-container .message-container .order-detail{
+        background-color: var(--bg-color);
+        border-radius: .5rem;
+        padding:1rem;
+        margin: 1rem 0;
+    }
+.order-message-container .message-container .order-detail{
+    background-color: rgb(244, 236, 236);
+    border-radius: .5rem;
+    color:black;
+    font-size: 1.8rem;
+    display: inline-block;
+    padding:1rem 1.5rem;
+    margin:1rem;
+}
+.order-message-container.message-container .order-detail span.total{
+    display:block;
+    background-color: var(--red);
+    color:whitesmoke
+}
+.order-message-container .message-container .customer-details{
+    margin:1rem 0;
+}
+.order-message-container .message-container .customer-details p{
+    padding:1rem 0;
+    font-size: 2rem;
+    color:black;  
+}
+.order-message-container .message-container .customer-details p span{
+    color:var(--blue);
+    padding: 0.5rem;
+    text-transform: none;
+} */
+
+/* Add the following CSS for the order message container */
+.order-message-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1100;
+}
+
+.order-message-container .message-container {
+    width: 50rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    padding: 2rem;
+    text-align: center;
+}
+
+.order-message-container .message-container h3 {
+    font-size: 2.2rem;
+    color: rgb(0, 0, 0);
+}
+
+.order-message-container .order-detail {
+    background-color: rgb(244, 236, 236);
+    border-radius: 0.5rem;
+    color: black;
+    font-size: 1.8rem;
+    display: inline-block;
+    padding: 1rem 1.5rem;
+    margin: 1rem;
+}
+
+.order-message-container .order-detail span.total {
+    display: block;
+    background-color: var(--red);
+    color: whitesmoke;
+}
+
+.order-message-container .customer-details {
+    margin: 1rem 0;
+}
+
+.order-message-container .customer-details p {
+    padding: 1rem 0;
+    font-size: 2rem;
+    color: black;
+}
+
+.order-message-container .customer-details p span {
+    color: var(--blue);
+    padding: 0.5rem;
+    text-transform: none;
+}
+
+/* Add the following CSS for the "Continue Shopping" button */
+.order-message-container .message-container .btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.6rem;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    border-radius: 0.3rem;
+    background-color: #1e90ff; /* Dark sky blue color */
+    transition: background-color 0.3s ease;
+}
+
+.order-message-container .message-container .btn:hover {
+    background-color: #0e78c5; /* Slightly darker shade on hover */
+}

@@ -1,8 +1,25 @@
+
+<?php
+// Get the current URL
+$current_url = $_SERVER['REQUEST_URI'];
+
+// Check if the URL contains "/admin/" and replace it with "/private-area/"
+$admin_dir = "private-area"; // Replace this with your desired custom admin directory name
+$new_url = str_replace("/admin/", "/$admin_dir/", $current_url);
+
+// Check if the URL has changed and redirect if necessary
+if ($new_url !== $current_url) {
+    header("Location: $new_url");
+    exit();
+}
+?>
 <?php
 $host = "localhost";
-$username = "root";
-$password = "";
+$username = "suvani";
+$password = "P@ssWorD!@#1";
 $database = "shop_db";
+
+
 
 // Create a new MySQLi object and establish a connection
 $conn = new mysqli($host, $username, $password, $database);
@@ -11,22 +28,40 @@ $conn = new mysqli($host, $username, $password, $database);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+
+// Connection successful
+echo "Connected to the database!";
 ?>
 
+<!-- 
+// $host = "localhost";
+// $username = "root";
+// $password = "";
+// $database = "shop_db";
 
+// // Create a new MySQLi object and establish a connection
+// $conn = new mysqli($host, $username, $password, $database);
+
+// // Check for connection errors
+// if ($conn->connect_error) {
+//     die("Connection failed: " . $conn->connect_error);
+// }
+// ?> -->
+<!-- 
 <?php
-// include 'header.php';
+
 
 // Fetch users from the database
-$sql = "SELECT * FROM users";
-$result = mysqli_query($conn, $sql);
+$sql = "SELECT * FROM user";
+$result = $conn->query($sql);  // Use the variable $conn to execute the query
 
 if (!$result) {
-    die('Query failed: ' . mysqli_error($conn));
+    die('Query failed: ' . $conn->error); // Use the variable $conn to get the error message
 }
 
-$users = mysqli_fetch_all($result, MYSQLI_ASSOC);
-?>
+$users = $result->fetch_all(MYSQLI_ASSOC); // Use the variable $result to fetch all rows
+?> -->
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -144,9 +179,6 @@ $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
 <body>
     <?php include 'header.php'; ?>
-
- 
-
     <div class="container">
         <h3>Registered Users</h3>
         <?php if (!empty($users)): ?>
@@ -243,7 +275,7 @@ if (isset($_POST['add_product'])) {
     $p_image = $_FILES['p-image']['name'];
     $p_image_tmp_name = $_FILES['p-image']['tmp_name'];
     $p_image_folder = 'uploaded_img/' . $p_image;
-    $p_image_folder_path = 'C:/xampp/htdocs/cw1-a-Suvani/cartImages/' . $p_image;
+    $p_image_folder_path = 'C:\xampp\htdocs\cw1-a-Suvani\assets\image\cart' . $p_image;
 
     $insert_query = mysqli_query($conn, "INSERT INTO `products` (name, price, image) VALUES ('$p_name', '$p_price', '$p_image')") or die('Query failed');
 
@@ -262,7 +294,7 @@ if (isset($_POST['update_product'])) {
     $update_p_price = $_POST['update_p_price'];
     $update_p_image = $_FILES['update_p_image']['name'];
     $update_p_image_tmp_name = $_FILES['update_p_image']['tmp_name'];
-    $update_p_image_folder = 'C:/xampp/htdocs/cw1-a-Suvani/cartImages/' . $update_p_image;
+    $update_p_image_folder = 'C:\xampp\htdocs\cw1-a-Suvani\assets\image\cart' . $update_p_image;
 
     $update_query = mysqli_query($conn, "UPDATE `products` SET name ='$update_p_name',price = '$update_p_price',image = '$update_p_image' WHERE id = '$update_p_id'");
 
@@ -294,8 +326,7 @@ if (isset($_POST['update_product'])) {
         }
     }
     ?>
-<!-- 
-    <?php include 'header.php'; ?> -->
+
     <div class="container">
         <section>
             <form action="" method="post" class="add-product-form" enctype="multipart/form-data">
@@ -420,3 +451,4 @@ if (isset($_POST['update_product'])) {
 </html>
 </section>
 </html>
+?>

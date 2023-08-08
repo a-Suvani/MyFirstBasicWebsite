@@ -1,11 +1,18 @@
 body {
-    background-color: #ccb7b7;
+    background-color: #fc94ba;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
   }
+  
+  
+  .Logo{
+    /* background-color: rgb(119, 146, 156);; */
+    background-size: cover;
+  }
   .Logo img {
-    width: 4%;
+    width: 8%;
+    height:5%;
   }
   h1 {
     text-align: center;
@@ -22,7 +29,7 @@ body {
   .movie {
     text-align: center;
     margin: 20px;
-    background-color: #e880a9;
+    background-color: #120208;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     padding: 20px;
@@ -73,7 +80,7 @@ body {
     top: 0;
     left: 0;
     height: 100%;
-    background-color: #1b0074;
+    background-color: #ff024a;
     border-radius: 5px;
     animation: fillAnimation 2s ease-in-out;
   }
@@ -92,7 +99,7 @@ body {
   
   .stars::before {
     content: "★ ★ ★ ★ ★";
-    color: #00216d;
+    color: #fa00c0;
     font-size: 24px;
   }
   
@@ -103,8 +110,8 @@ body {
   .percentage span {
     display: block;
     font-weight: bold;
-    font-size: 18px;
-    color: #2006a3;
+    font-size: 25px;
+    color: #e4e1f4;
     animation: fadeIn 2s ease-in-out;
   }
   
