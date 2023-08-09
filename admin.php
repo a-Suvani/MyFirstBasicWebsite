@@ -1,4 +1,11 @@
-
+<?php
+session_start();
+session_regenerate_id(true);
+if(!isset($_SESSION['AdminLoginId']))
+{
+    header("location: admin.php");
+}
+?>
 <?php
 // Get the current URL
 $current_url = $_SERVER['REQUEST_URI'];
@@ -174,10 +181,27 @@ $users = $result->fetch_all(MYSQLI_ASSOC); // Use the variable $result to fetch 
                 padding: 4px 8px;
             }
         }
+        div.headerr{
+            color:blue;
+            font-size:18px;
+        }
     </style>
 </head>
 
 <body>
+    <div class="headerr">
+        <h1>Admin Panel - <?php echo $_SESSION['AdminLoginId'] ?></h1>
+        <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
+         <button type="submit" name="Logout">Logout</button>
+    </form>
+    </div>
+    <?php
+    if(isset($_POST['Logout']))
+    {
+        session_destroy();
+        header("location: alogin.php");
+    }
+    ?>
     <?php include 'header.php'; ?>
     <div class="container">
         <h3>Registered Users</h3>
@@ -260,10 +284,15 @@ $users = $result->fetch_all(MYSQLI_ASSOC); // Use the variable $result to fetch 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blank HTML Page</title>
+    <title>Admin Panel</title>
+
 </head>
 
 <body>
+    <div class="header2">
+        <h1> ADMIN PANEL - <?php echo $_SESSION['AdminLoginId'] ?> </h1>
+    </div>
+
 <?php
 include 'config.php';
 
@@ -319,6 +348,8 @@ if (isset($_POST['update_product'])) {
 </head>
 
 <body>
+
+
     <?php
     if (isset($message)) {
         foreach ($message as $msg) {

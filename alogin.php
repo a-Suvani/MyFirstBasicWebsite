@@ -1,103 +1,6 @@
-<?php
-session_start();
-
-// Check if the login form is submitted
-if (isset($_POST['submit'])) {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-
-    // Validate the credentials (replace with your own validation logic)
-    if ($username === 'suvani' && $password === 'P@ssWorD!@#1') {
-        // Set session variable to indicate successful login
-        $_SESSION['loggedin'] = true;
-
-        // Redirect to the admin page
-        header('Location: admin.php');
-        exit();
-    } else { 
-        // Invalid credentials, display an error message
-        echo 'Invalid username or password';
-    }
-}
-?>
-
-<!-- 
-
-<?php
-// // a.php - Admin-only page
-
-// session_start();
-
-// // Check if the user is logged in and their username is "suvani" (your admin username)
-// $is_admin = isset($_SESSION["username"]) && $_SESSION["username"] === "suvani";
-
-// // Check if the request is coming from the login page (alogin.php) or other authorized sources
-// $referer = $_SERVER['HTTP_REFERER'];
-// $allowed_referer = "www.youtube.com"; // Replace this with the URL of your login page
-
-// if (!$is_admin || $referer !== $allowed_referer) {
-//     header("Location: alogin.php"); // Redirect to the login page if not logged in as admin or if the referer is not authorized
-//     exit;
-// }
-// ?> -->
-<?php
-// Including the configuration file
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-include 'config.php';
-
-function input_filter($data){
-    $data = trim($data);
-    $data = stripslashes($data); 
-    $data = htmlspecialchars($data);
-    return $data;
-}
-
-// Check if the form is submitted
-if(isset($_POST['Login'])){
-    if(isset($POST['Login'])){
-        $AdminName = input_filter($_POST['AdminName']);
-        $AdminPassw = $_POST['AdminPassw'];
-    }
-   
-    // Escaping special symbols used in SQL statement
-    $AdminName = mysqli_real_escape_string($conn, $AdminName); #escapes the special characters of a string that is present on our sql statement
-    $AdminPassw = mysqli_real_escape_string($conn, $AdminPassw);
-
-    // Query Template
-    $query = "SELECT * FROM `admin_logi` WHERE `admin_name`=? AND `admin_password`=?";
-
-    // Prepared statement to protect from SQL injection
-    if($stmt = mysqli_prepare($conn, $query)){
-        // Bind parameters to the prepared statement
-        mysqli_stmt_bind_param($stmt, "ss", $AdminName, $AdminPassw);
-        // Execute the prepared statement
-        if(mysqli_stmt_execute($stmt)){
-            // You can fetch the result and process it here
-            mysqli_stmt_store_result($stmt);
-            if(mysqli_stmt_num_rows($stmt) == 1){
-                session_start();
-                $_SESSION['AdmiLoginId'] = $AdminName;
-                header('Location: admin.php');
-                exit();
-            } else {
-                echo "Invalid Admin Name or Password.";
-            }
-        } else {
-            echo "Login Failed!";
-        }
-        // Close the statement
-        mysqli_stmt_close($stmt);
-    } else {
-        // Handle the case when the prepared statement could not be created
-        echo "SQL query cannot be created: " . mysqli_error($conn);
-    }
-
-    // Close the connection
-    mysqli_close($conn);
-}
-?>
-
+<?php require("database.php")?>
+<?php require("config.php")?>
+<html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -182,3 +85,47 @@ if(isset($_POST['Login'])){
 </body>
 </html>
 
+<?php
+function input_filter($data){
+    $data=trim($data);
+    $data=stripslashes($data);
+    $data=htmlspecialchars($data);
+    return $data;
+}
+
+if(isset($_POST['Login']))
+{
+    $AdminName = $_POST['AdminName'];
+    $AdminPassw = $_POST['AdminPassw'];
+
+    // Assuming you have established a database connection named $conn
+    $AdminName = mysqli_real_escape_string($conn, $AdminName);
+    $AdminPassw = mysqli_real_escape_string($conn, $AdminPassw);
+
+    $query = "SELECT * FROM `admin_logi` WHERE `Admin_Name`=? AND `Admin_Password`=?";
+    
+    if($stmt = mysqli_prepare($conn, $query))
+    {
+        mysqli_stmt_bind_param($stmt, "ss", $AdminName, $AdminPassw);
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_store_result($stmt);
+        
+        if(mysqli_stmt_num_rows($stmt)==1)
+        {
+            session_start();
+            $_SESSION['AdminLoginId']=$AdminName;
+            header("location: admin.php");
+        }
+        else
+        {
+            echo "<script>alert('Invalid admin name or password');</script>";
+        }
+        mysqli_stmt_close($stmt);
+    }
+
+    else
+    {
+        echo "<script>alert('Invalid admin name or password');</script>";
+    }
+}
+    
