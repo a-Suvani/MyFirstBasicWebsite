@@ -1,2 +1,8 @@
 # MyFirstBasicWebsite
-Hei tyypit, tämä on ensimmäinen nettisivuni, jonka olen luonut!!! Se saattaa olla sotkuinen johtuen kaikista sekavista koodeista, mutta nauttikaa vierailustanne!
+
+
+
+
+MY YOUTUBE LINK FOR THE VIDEO 
+
+https://www.youtube.com/watch?v=ligSJyl0-uI&t=6s
